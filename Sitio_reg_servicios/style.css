@@ -1,0 +1,271 @@
+/* ======================================= */
+/* 0. Estilos Generales y Reseteo          */
+/* ======================================= */
+:root {
+    --color-principal: hsl(231, 100%, 50%); /* Azul brillante */
+    --color-secundario: #1c25a1; /* Gris oscuro para texto */
+    --color-fondo: #ffffff7a; /* Gris claro para fondo */
+    --color-claro: #ffffff85;
+}
+
+* {
+    /* Reseteo básico para evitar márgenes y paddings inconsistentes */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    /* 🎨 Tamaño de Fuente Base: */
+    /* Se recomienda usar 'px' para accesibilidad o 'rem' para escalabilidad */
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-secundario);
+
+    /* --- ESTILOS PARA LA IMAGEN DE FONDO --- */
+    background-image: url('img/fondo-principal.jpg'); /* ¡Ajustar la ruta de la imagen! */
+    background-size: cover; /* Cubre toda el área del body sin distorsionar */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    
+    /* Para asegurar que el texto sea legible sobre la imagen, incluso si no tiene fondo */
+    background-color: #f4f4f4; /* Un color de fondo de respaldo */
+}
+
+/* Opcional: Para mejorar la legibilidad del texto sobre el fondo de imagen */
+/* Puedes aplicar un fondo semitransparente a secciones principales */
+main, header, footer {
+    background-color: var(--color-claro); /* Usa un color sólido o semitransparente */
+    /* background-color: rgba(255, 255, 255, 0.9); */ /* Ejemplo de fondo blanco semi-transparente */
+}
+.introduccion {
+    text-align: center;
+    max-width: 800px;
+    margin: 15px auto 40px;
+}
+
+/* Modifica el Encabezado Principal del Sitio (h1) */
+h1 {
+    font-size: 3.5em; /* Tamaño de la letra */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Opcional: una fuente diferente para destacar */
+    color: white;    /* Color del texto */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Modifica los Títulos de Sección (h2) */
+h2 {
+    font-size: 2em;
+    color: var(--color-principal); /* Utiliza la variable de color principal */
+    text-transform: uppercase;     /* Pone el texto en mayúsculas */
+    margin-bottom: 25px;
+}
+
+/* Modifica los Subtítulos de Tarjetas (h3) */
+h3 {
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif; /* Cambia la fuente */
+    margin-top: 10px;
+}
+
+/* ======================================= */
+/* 1. Estilos de Encabezado y Navegación   */
+/* ======================================= */
+header {
+    background: var(--color-secundario);
+    color: var(--color-claro);
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+/* Estilos de la Barra de Navegación */
+nav ul {
+    list-style: none;
+    /* Usamos Flexbox para la disposición horizontal */
+    display: flex;
+    justify-content: center; /* Centra los elementos */
+}
+
+nav ul li a {
+    display: block;
+    color: var(--color-claro);
+    text-decoration: none;
+    
+    /* 🎨 Tamaño de fuente de la navegación */
+    font-size: 1.1em; 
+    
+    /* Opcional: Poner el texto en mayúsculas y hacerlo más grueso */
+    text-transform: uppercase;
+    font-weight: bold; 
+    
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.activo {
+    background-color: var(--color-principal);
+}
+
+/* ======================================= */
+/* 2. Estilos del Contenido Principal (Main) */
+/* ======================================= */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section, aside {
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+h2, h3 {
+    color: var(--color-principal);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ======================================= */
+/* 3. Layout de Tarjetas de Servicios      */
+/* ======================================= */
+.contenedor-servicios {
+    /* Contenedor principal para las 3 columnas */
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas bajen en pantallas pequeñas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center;
+}
+
+.tarjeta-servicio {
+    /* Cada tarjeta ocupará aproximadamente un tercio del espacio */
+    flex: 1 1 300px; /* flex-grow, flex-shrink, base-size */
+    background: var(--color-claro);
+    padding: 25px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-5px); /* Pequeño efecto de elevación al pasar el ratón */
+}
+
+.tarjeta-servicio h3 {
+    color: var(--color-secundario);
+    margin-top: 10px;
+}
+
+/* ======================================= */
+/* 4. Estilos de Botones (btn-info)        */
+/* ======================================= */
+.btn-info, .btn-principal {
+    display: inline-block;
+    background: var(--color-principal);
+    color: var(--color-claro);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    border: none; /* Para el botón de formulario */
+    cursor: pointer;
+}
+
+.btn-info:hover, .btn-principal:hover {
+    background: #0056b3; /* Un azul más oscuro */
+}
+
+/* ======================================= */
+/* 5. Estilos de Formulario y Mapa         */
+/* ======================================= */
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], 
+input[type="email"], 
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Contenedor del mapa y llamada a la acción */
+.mapa-contenedor, .llamada-contacto {
+    margin-top: 25px;
+    padding: 20px;
+    background: var(--color-fondo);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.mapa-contenedor iframe {
+    /* Asegura que el iframe use el 100% de su contenedor */
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+/* ======================================= */
+/* 6. Estilos del Pie de Página (Footer)   */
+/* ======================================= */
+footer {
+    background: var(--color-secundario);
+    color: var(--color-claro);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer a {
+    color: var(--color-claro);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ======================================= */
+/* 7. Media Queries (Responsividad)        */
+/* ======================================= */
+
+/* Para tabletas y pantallas más pequeñas */
+@media (max-width: 768px) {
+    
+    /* En pantallas medianas, la navegación puede volverse más compacta */
+    nav ul {
+        flex-direction: column; /* Apila los enlaces */
+        gap: 5px;
+    }
+
+    /* En las tarjetas de servicio, permite que las tarjetas crezcan hasta ocupar todo el ancho */
+    .tarjeta-servicio {
+        flex: 1 1 100%; /* Ocupa todo el ancho */
+    }
+
+    /* Reduce el padding general */
+    main {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Contacto - Reg Servicios</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>REG Servicios</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html" class="activo">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Contáctanos</h2>
+            <p>Estamos aquí para ayudarte. Por favor, rellena el formulario a continuación o utiliza nuestros otros métodos de contacto.</p>
+            
+            <form action="/enviar-formulario" method="POST">
+                
+                <div>
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre_completo" required>
+                </div>
+
+                <div>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email_usuario" required>
+                </div>
+
+                <div>
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto_mensaje">
+                </div>
+
+                <div>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="cuerpo_mensaje" rows="6" required></textarea>
+                </div>
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+
+        <aside>
+            <h3>Otros Métodos de Contacto y Ubicación</h3>
+            <p>
+                **Teléfono:** +54 260 459 7792<br>
+                **Dirección:** Ejército de Los Andes 3500, San Rafael, Mendoza, Argentina<br>
+                **Horario:** Lunes a Viernes, 9:00 - 18:00
+            </p>
+
+            <div class="mapa-contenedor">
+                <iframe 
+                    width="100%" 
+                    height="350" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    
+                    /* 🚨 URL CORREGIDA 🚨 */
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1576.4357773229875!2d-68.32483125199859!3d-34.60627589999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9679075ebf9175d7%3A0x7d28c3a9f0322c36!2sEjercito%20de%20Los%20Andes%203500%2C%20M5600%20San%20Rafael%2C%20Mendoza%2C%20Argentina!5e0!3m2!1ses-419!2sar!4v1701198450123!5m2!1ses-419!2sar">
+                </iframe>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 REG Servicios. Todos los derechos reservados.</p>
+        <p>
+            <a href="politica.html">Política de Privacidad</a> | 
+            <a href="terminos.html">Términos de Uso</a> |
+            <a href="index.html">Inicio</a> 
+        </p>
+    </footer>
+
+</body>
+</html>
